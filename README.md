@@ -1,118 +1,99 @@
-# Hyde
-
-Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
-
-![Hyde screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
-
-
-## Contents
-
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Sticky sidebar content](#sticky-sidebar-content)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
-
-
-## Usage
-
-Hyde is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
-
-
-## Options
-
-Hyde includes some customizable options, typically applied via classes on the `<body>` element.
-
-
-### Sidebar menu
-
-Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
-
-```
 ---
+title: "About"
+permalink: "/about/"
 layout: page
-title: About
 ---
+
+## Installation
+
+Just fork this [repository](https://github.com/niklasbuschmann/contrast) and adjust the `_config.yml` to use with [Github Pages](https://pages.github.com/) and your page is done.
+
+## Features
+
+ - supports dark mode on macOS Mojave
+ - optional sidebar
+ - MathJax support
+ - no external ressources
+ - included archive page
+ - supports pagination
+ - feed generation
+ - responsive
+ - syntax highlighting
+ - supports comments via [disqus](https://disqus.com/) or [isso](http://posativ.org/isso/)
+
+## Based on
+
+- [Hyde](https://github.com/poole/hyde)
+- [Minima](https://github.com/jekyll/minima)
+- [Lagrange](https://github.com/LeNPaul/Lagrange)
+- [Font Awesome](http://fontawesome.io/)
+- [KaTeX](https://katex.org/)
+- [Pygments](https://github.com/richleland/pygments-css)
+
+## Installation (jekyll-remote-theme method)
+
+You can use this theme with the `jekyll-remote-theme` plugin. Just create an empty repo, copy over the `index.html` file and add this to your `_config.yml`:
+
+```yaml
+remote_theme: niklasbuschmann/contrast@v2.11
+
+plugins:
+  - jekyll-remote-theme
 ```
 
-**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
+Note: to enable icons you also need to copy over the `_data` folder.
 
+## Config
 
-### Sticky sidebar content
+Your `_config.yml` could for example look like this:
 
-By default Hyde ships with a sidebar that affixes it's content to the bottom of the sidebar. You can optionally disable this by removing the `.sidebar-sticky` class from the sidebar's `.container`. Sidebar content will then normally flow from top to bottom.
+```yaml
+title: "Blog Title"
+author: "Blog Author"
+description: "My personal blog about ... something"
+permalink: /:title/
+lang: "en"
+excerpt_separator: "\n\n\n"
+date_format: "%B %d, %Y"
 
-```html
-<!-- Default sidebar -->
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    ...
-  </div>
-</div>
+# Layout
 
-<!-- Modified sidebar -->
-<div class="sidebar">
-  <div class="container">
-    ...
-  </div>
-</div>
+show_excerpts: true        # show article excerpts on the home page
+show_frame: true           # adds a gray frame to the site
+show_sidebar: false        # show a sidebar instead of the usual header
+
+# Menu
+
+navigation:                # accepts {file, title, url, icon, sidebaricon}
+  - {file: "index.html"}
+  - {file: "README.md"}
+
+external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
+  - {title: Mail, icon: envelope, url: "mailto:niklasbuschmann@users.noreply.github.com"}
+  - {title: Github, icon: github, url: "https://github.com/niklasbuschmann/contrast"}
+  - {title: Subscribe, icon: rss, url: "/feed.xml"}
+
+comments:
+#  disqus_shortname: ""    # see https://disqus.com/
+#  isso_domain: ""         # see https://posativ.org/isso/
+
+plugins:
+ - jekyll-feed
+
 ```
 
+## MathJax
 
-### Themes
-
-Hyde ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
-
-![Hyde in red](https://f.cloud.github.com/assets/98681/1831229/42b0b354-7384-11e3-8462-31b8df193fe5.png)
-
-There are eight themes available at this time.
-
-![Hyde theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
-
-To use a theme, add anyone of the available theme classes to the `<body>` element in the `default.html` layout, like so:
-
-```html
-<body class="theme-base-08">
-  ...
-</body>
-```
-
-To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/hyde/blob/master/public/css/hyde.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
-
-### Reverse layout
-
-![Hyde with reverse layout](https://f.cloud.github.com/assets/98681/1831230/42b0d3ac-7384-11e3-8d54-2065afd03f9e.png)
-
-Hyde's page orientation can be reversed with a single class.
-
-```html
-<body class="layout-reverse">
-  ...
-</body>
-```
-
-
-## Development
-
-Hyde has two branches, but only one is used for active development.
-
-- `master` for development.  **All pull requests should be submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
-
-
-## Author
-
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
-
+Contrast comes preinstalled with a leightweight alternative to MathJax called [KaTeX](https://katex.org/). To display equations in a post simply set `mathjax: true` in the article's front matter.
 
 ## License
 
-Open sourced under the [MIT license](LICENSE.md).
+[public domain](http://unlicense.org/)
 
-<3
+## Screenshots
+
+![screenshot](https://user-images.githubusercontent.com/4943215/109431850-cd711780-7a08-11eb-8601-2763f2ee6bb4.png)
+
+![screenshot](https://user-images.githubusercontent.com/4943215/109431832-b6cac080-7a08-11eb-9c5e-a058680c23a1.png)
+
+![screenshot](https://user-images.githubusercontent.com/4943215/73125194-5f0b8b80-3fa4-11ea-805c-8387187503ad.png)
