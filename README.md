@@ -1,1 +1,0 @@
-# givxq.github.io
