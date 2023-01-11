@@ -3,7 +3,7 @@
 
 # Uncomment and set the URL of your site (with protocol, e.g. `https://`)
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-# url:                   https://lazyren.github.io
+# url:                   https://givxq.github.io
 
 # Uncomment and set the "base URL" of your site.
 # When your site is in a subdirectory, set to `/<name of directory>`,
@@ -20,19 +20,18 @@
 lang:                  ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Lazy Ren
+title:                 "@givxq"
 
 timezone:              Asia/Seoul
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Work Hard to be Lazy.
-  SW Engineer at Samsung Research.
+  born slippy
 
 # A shorter description for the sidebar.
-tagline:               >
-  Work Hard to be Lazy.
+#tagline:               >
+#  laid-back
 
 # A list of keywords for your blog
 keywords:              ["Development", "C++", "Rust", "Jekyll"]
@@ -40,19 +39,19 @@ keywords:              ["Development", "C++", "Rust", "Jekyll"]
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  /assets/img/seattle.png
+#logo:                  /assets/img/.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                DaeIn Lee
-  email:               daein0lee@gmail.com
-  picture:             /assets/img/seattle.png
+  name:                givxq
+  email:               coooeeeeep@gmail.com
+#  picture:             /assets/img/1024_david.png
   social:
-    linkedin:          daein-lee-3b6ba9139
-    github:            lazyren
-    stackoverflow:     4294737
-    email:             daein0lee@gmail.com
+#    linkedin:          
+    github:            givxq
+#    stackoverflow:     1234
+    email:             coooeeeeep@gmail.com
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
@@ -91,8 +90,9 @@ excerpt_separator:     <!--more-->
 
 # Sidebar image and theme color of the site.
 accent_image:
-  background:          center / cover url(/assets/img/music-cat-no-loop.gif)
-  overlay:             false
+#  background:          center / cover url(/assets/img/1024_wid.jpg)
+  background:          rgb(31,55,75) #center url(assets/img/born_slippy_wid.jpg)
+  overlay:             true
 accent_color:          rgb(0,174,239)
 
 # This is used for the `theme-color` meta tag,
@@ -102,7 +102,7 @@ theme_color:           rgb(31,55,75)
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://hydejack.com/docs/config/#changing-fonts>
-google_fonts:          Noto+Sans+KR|JetBrains+Mono|Nanum+Gothic+Coding
+google_fonts:          Noto+Sans+KR|Martian+Mono|Nanum+Gothic+Coding|Bree+Serif
 
 # The text font. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
@@ -110,10 +110,10 @@ font:                  Noto Sans KR, Helvetica, Arial, sans-serif
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font_heading:          Helvetica, Arial, sans-serif
+font_heading:          Bree Serif, Helvetica, Arial, sans-serif
 
 # The font used for code blocks. Expects a string that is a valid CSS font-family value.
-font_code:             JetBrains Mono, Nanum Gothic Coding, Menlo, Monaco, Consolas, monospace;
+font_code:             Martian Mono, Nanum Gothic Coding, Menlo, Monaco, Consolas, monospace;
 
 defaults:
   # You can use this to provide a default accent color and background for
@@ -189,7 +189,7 @@ kramdown:
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Analytics from your page, remove the line below.
-google_analytics:      UA-68290006-3
+#google_analytics:      UA-68290006-3
 
 # Set which comment system to use
 comments:
@@ -213,10 +213,10 @@ comments:
 # Make sure all variables are set properly. Check below link for detail.
 # https://giscus.vercel.app/
 giscus:
-  repo:                "LazyRen/LazyRen.github.io"
-  repo-id:             "MDEwOlJlcG9zaXRvcnkyNzU4Mjk1NTc="
+  repo:                "givxq/givxq.github.io"
+  #repo-id:             "1NTc="
   category:            "Comments"
-  category-id:         "DIC_kwDOEHDTNc4B-MIg"
+  #category-id:         "DIC_kwDOEHTNc4B-MIg"
   mapping:             "pathname"
   reaction-enabled:    "1"
   data-emit-metadata:  "0"
@@ -238,11 +238,13 @@ lightbox:              true
 hydejack:
   # Configure the order of complementary content on blog posts
   # post_addons:         [about, newsletter, related, random, comments]
-  post_addons:         [about, comments]
+  # post_addons:         [about, comments]
+  post_addons:         [comments]
 
   # Configure the order of complementary content on project pages
   # project_addons:      [about, newsletter, other, comments]
-  project_addons:      [about, other, comments]
+  #project_addons:      [about, other, comments]
+  project_addons:      [other, comments]
 
   # Set to `true` if you don't want to show an icon indicating external links
   no_mark_external:    true
@@ -323,7 +325,7 @@ hydejack:
     dynamic:           true
 
     # Set to `true` to allow visitors to switch between light and dark mode.
-    icon:              false
+    icon:              true
 
   # ⚡️ DANGER ZONE ⚡️
   # ----------------
@@ -392,7 +394,7 @@ plugins:
 # ---------------------------------------------------------------------------------------
 
 # Where you proof that you own this site (used by jekyll-seo-tag)
-google_site_verification: "zIn7l_GwuOi4WnyRQsdhI9Jpn6IAs0SLR_4HG8OZzsM"
+google_site_verification: "ULk1_VPpRmN-YevSHqnVXWXXqG39OxDi9gfUXka8Sf4"
 # -- or --
 # webmaster_verifications:
 #   google:              <verification-id>
@@ -479,6 +481,5 @@ jekyll_compose:
 # jekyll-feed settings
 feed:
   categories:
-    - devlog
-    - review
-    - studylog
+    - dev
+    - study
